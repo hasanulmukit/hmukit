@@ -38,15 +38,23 @@ export default function Home() {
           <div className="flex items-center">
             {/* Light/Dark toggle with sun/moon icon */}
             <button
-  onClick={() => setIsDark(!isDark)}
-  className="mr-4 p-2 focus:outline-none"
->
-  {isDark ? (
-    <img src="/assets/icons/sun.svg" alt="Switch to light mode" className="h-6 w-6" />
-  ) : (
-    <img src="/assets/icons/moon.svg" alt="Switch to dark mode" className="h-6 w-6" />
-  )}
-</button>
+              onClick={() => setIsDark(!isDark)}
+              className="mr-4 p-2 focus:outline-none"
+            >
+              {isDark ? (
+                <img
+                  src="/assets/icons/sun.svg"
+                  alt="Switch to light mode"
+                  className="h-6 w-6"
+                />
+              ) : (
+                <img
+                  src="/assets/icons/moon.svg"
+                  alt="Switch to dark mode"
+                  className="h-6 w-6"
+                />
+              )}
+            </button>
 
             {/* Mobile menu button */}
             <div className="md:hidden">
@@ -76,21 +84,22 @@ export default function Home() {
                   : "hidden md:flex"
               }`}
             >
-              {["home", "skills", "portfolio", "about", "contact"].map((section) => (
-    <li key={section}>
-      <a
-        href={`#${section}`}
-        className={`transition duration-300 inline-block border-b border-transparent  ${
-          isDark
-            ? "text-white hover:border-blue-400 hover:text-blue-400"
-            : "text-gray-700 hover:border-[#4a7766] hover:text-[#4a7766]"
-        }`}
-      >
-        {section.charAt(0).toUpperCase() + section.slice(1)}
-      </a>
-    </li>
-  ))}
-
+              {["home", "skills", "portfolio", "about", "contact"].map(
+                (section) => (
+                  <li key={section}>
+                    <a
+                      href={`#${section}`}
+                      className={`transition duration-300 inline-block border-b border-transparent  ${
+                        isDark
+                          ? "text-white hover:border-blue-400 hover:text-blue-400"
+                          : "text-gray-700 hover:border-[#4a7766] hover:text-[#4a7766]"
+                      }`}
+                    >
+                      {section.charAt(0).toUpperCase() + section.slice(1)}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </nav>
@@ -99,7 +108,9 @@ export default function Home() {
       {/* MAIN CONTENT */}
       <main
         className={`pt-24 transition-colors duration-300 ${
-          isDark ? "bg-gradient-to-b from-gray-800 to-gray-900 text-white" : "bg-white text-gray-800"
+          isDark
+            ? "bg-gradient-to-b from-gray-800 to-gray-900 text-white"
+            : "bg-white text-gray-800"
         }`}
       >
         {/* HOME SECTION */}
@@ -119,7 +130,8 @@ export default function Home() {
               </span>
               <br />
               <span className="text-xl">
-                Passionate web developer &amp; aspiring AI/ML researcher specializing in front-end design and machine learning.
+                Passionate web developer &amp; aspiring AI/ML researcher
+                specializing in front-end design and machine learning.
               </span>
             </h1>
             <a
@@ -136,12 +148,36 @@ export default function Home() {
             {/* Social Icons */}
             <div className="flex space-x-4">
               {[
-                { href: "https://www.linkedin.com/in/hasanul-mukit-b7a00117b/", icon: "/assets/icons/linkedin.png", alt: "LinkedIn" },
-                { href: "https://github.com/hasanulmukit", icon: "/assets/icons/github.png", alt: "Github" },
-                { href: "https://leetcode.com/u/hmukit/", icon: "/assets/icons/leetcode.png", alt: "Leetcode" },
-                { href: "https://www.hackerrank.com/profile/hmukit_gub", icon: "/assets/icons/hackerrank.png", alt: "Hackerrank" },
-                { href: "https://scholar.google.com/citations?hl=en&user=AxgFFXIAAAAJ", icon: "/assets/icons/scholar.png", alt: "Scholar" },
-                { href: "https://medium.com/@hmukit02", icon: "/assets/icons/medium.png", alt: "Medium" },
+                {
+                  href: "https://www.linkedin.com/in/hasanul-mukit-b7a00117b/",
+                  icon: "/assets/icons/linkedin.png",
+                  alt: "LinkedIn",
+                },
+                {
+                  href: "https://github.com/hasanulmukit",
+                  icon: "/assets/icons/github.png",
+                  alt: "Github",
+                },
+                {
+                  href: "https://leetcode.com/u/hmukit/",
+                  icon: "/assets/icons/leetcode.png",
+                  alt: "Leetcode",
+                },
+                {
+                  href: "https://www.hackerrank.com/profile/hmukit_gub",
+                  icon: "/assets/icons/hackerrank.png",
+                  alt: "Hackerrank",
+                },
+                {
+                  href: "https://scholar.google.com/citations?hl=en&user=AxgFFXIAAAAJ",
+                  icon: "/assets/icons/scholar.png",
+                  alt: "Scholar",
+                },
+                {
+                  href: "https://medium.com/@hmukit02",
+                  icon: "/assets/icons/medium.png",
+                  alt: "Medium",
+                },
               ].map((social, i) => (
                 <a
                   key={i}
@@ -179,17 +215,49 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                { name: "Next.js", icon: "/assets/icons/nextjs.svg", percent: 80 },
-                { name: "Tailwind CSS", icon: "/assets/icons/tailwind.svg", percent: 85 },
-                { name: "Node.js", icon: "/assets/icons/node-js.png", percent: 75 },
-                { name: "React.js", icon: "/assets/icons/react.png", percent: 80 },
-                { name: "Python", icon: "/assets/icons/python.png", percent: 55 },
+                {
+                  name: "Next.js",
+                  icon: "/assets/icons/nextjs.svg",
+                  percent: 80,
+                },
+                {
+                  name: "Tailwind CSS",
+                  icon: "/assets/icons/tailwind.svg",
+                  percent: 85,
+                },
+                {
+                  name: "Node.js",
+                  icon: "/assets/icons/node-js.png",
+                  percent: 75,
+                },
+                {
+                  name: "React.js",
+                  icon: "/assets/icons/react.png",
+                  percent: 80,
+                },
+                {
+                  name: "Python",
+                  icon: "/assets/icons/python.png",
+                  percent: 55,
+                },
                 { name: "Java", icon: "/assets/icons/java.png", percent: 75 },
-                { name: "UI/UX Design", icon: "/assets/icons/prototyping.png", percent: 90 },
-                { name: "Content Writing", icon: "/assets/icons/content-writing.png", percent: 90 },
+                {
+                  name: "UI/UX Design",
+                  icon: "/assets/icons/prototyping.png",
+                  percent: 90,
+                },
+                {
+                  name: "Content Writing",
+                  icon: "/assets/icons/content-writing.png",
+                  percent: 90,
+                },
               ].map((skill) => (
                 <div key={skill.name} className="flex items-center">
-                  <img src={skill.icon} alt={skill.name} className="w-8 h-8 mr-4" />
+                  <img
+                    src={skill.icon}
+                    alt={skill.name}
+                    className="w-8 h-8 mr-4"
+                  />
                   <div className="w-full">
                     <div className="flex justify-between mb-1">
                       <span>{skill.name}</span>
@@ -234,7 +302,8 @@ export default function Home() {
                 {
                   image: "/images/prj1.png",
                   live: "https://hasanulmukit.github.io/responsive-restaurant-webapp/",
-                  github: "https://github.com/hasanulmukit/responsive-restaurant-webapp",
+                  github:
+                    "https://github.com/hasanulmukit/responsive-restaurant-webapp",
                 },
                 {
                   image: "/images/prj3.png",
@@ -254,7 +323,8 @@ export default function Home() {
                 {
                   image: "/images/prj4.png",
                   live: "https://github.com/hasanulmukit/time-series-forecasting",
-                  github: "https://github.com/hasanulmukit/time-series-forecasting",
+                  github:
+                    "https://github.com/hasanulmukit/time-series-forecasting",
                 },
               ].map((project, i) => (
                 <div
@@ -371,35 +441,41 @@ export default function Home() {
                     <p>
                       Hello, I’m Hasanul Mukit, a dedicated computer engineering
                       graduate with a passion for creating innovative digital
-                      experiences. With expertise in web development, UI/UX design,
-                      and content writing, I thrive at the intersection of creativity
-                      and technology.
+                      experiences. With expertise in web development, UI/UX
+                      design, and content writing, I thrive at the intersection
+                      of creativity and technology.
                     </p>
                     <p>
-                      I’m currently building my professional portfolio, dedicating
-                      significant time to developing practical projects—all of which
-                      reflect my commitment to clean code and user-focused design.
+                      I’m currently building my professional portfolio,
+                      dedicating significant time to developing practical
+                      projects—all of which reflect my commitment to clean code
+                      and user-focused design.
                     </p>
                     <p>
-                      I believe in lifelong learning, which drives me to constantly
-                      explore new tools and technologies. My tech stack includes HTML,
-                      CSS, JavaScript, React, Node.js, Next.js, and Tailwind CSS, among others.
+                      I believe in lifelong learning, which drives me to
+                      constantly explore new tools and technologies. My tech
+                      stack includes HTML, CSS, JavaScript, React, Node.js,
+                      Next.js, and Tailwind CSS, among others.
                     </p>
                     <p>
-                      Alongside my core expertise, I actively engage in AI/ML research
-                      and development, collaborating on group projects that leverage
-                      machine learning algorithms to solve real-world challenges.
+                      Alongside my core expertise, I actively engage in AI/ML
+                      research and development, collaborating on group projects
+                      that leverage machine learning algorithms to solve
+                      real-world challenges.
                     </p>
                     <p>
-                      When I’m not coding or designing, you’ll likely find me exploring
-                      ways to incorporate sustainability into technology or enjoying a
-                      good book. I’m always looking to connect with like-minded individuals—let’s connect!
+                      When I’m not coding or designing, you’ll likely find me
+                      exploring ways to incorporate sustainability into
+                      technology or enjoying a good book. I’m always looking to
+                      connect with like-minded individuals—let’s connect!
                     </p>
                   </div>
                 )}
                 {activeTab === "experience" && (
                   <div
-                    className={`space-y-4 ${isDark ? "text-gray-300" : "text-gray-800"}`}
+                    className={`space-y-4 ${
+                      isDark ? "text-gray-300" : "text-gray-800"
+                    }`}
                   >
                     {[
                       {
@@ -412,19 +488,22 @@ export default function Home() {
                       },
                       {
                         title: "Content Writer",
-                        details: "Independent Contractor | Mar 2020 - Present",
+                        details: "Independent Contractor | Mar 2020 - Dec 2024",
                       },
                       {
                         title: "IT officer",
-                        details: "Nabarupa Fashion House BD Ltd. | Sep 2023 - Aug 2024",
+                        details:
+                          "Nabarupa Fashion House BD Ltd. | Sep 2023 - Aug 2024",
                       },
                       {
                         title: "UI/UX Designer",
-                        details: "Independent Contractor | Nov 2020 - July 2023",
+                        details:
+                          "Independent Contractor | Nov 2020 - July 2023",
                       },
                       {
                         title: "Educator",
-                        details: "Comfort Education Care | April 2016 - Feb 2019",
+                        details:
+                          "Comfort Education Care | April 2016 - Feb 2019",
                       },
                     ].map((exp, i) => (
                       <div key={i} className="border p-4 rounded">
@@ -436,7 +515,9 @@ export default function Home() {
                 )}
                 {activeTab === "education" && (
                   <div
-                    className={`space-y-4 ${isDark ? "text-gray-300" : "text-gray-800"}`}
+                    className={`space-y-4 ${
+                      isDark ? "text-gray-300" : "text-gray-800"
+                    }`}
                   >
                     {[
                       {
@@ -467,11 +548,35 @@ export default function Home() {
                 {activeTab === "achievements" && (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {[
-                      { image: "/images/dev1.jpg", title: "Responsive Web Design Developer Certification, 2024" },
-                      { image: "/images/bookreading.jpg", title: "2nd Runner up, British Council Book Reading Competition, Fall 2019" },
-                      { image: "/images/ai_hack.webp", title: "AI for connectivity hackathon Certificate, Jan 24-26, 2025" },
-                      { image: "/images/vc.jpg", title: "Vice Chancellor Awards, Green University of Bangladesh" },
-                      { image: "/images/dean.jpg", title: "Dean Awards, Green University of Bangladesh" },
+                      {
+                        image: "/images/ibm_granite.jpg",
+                        title:
+                          "Certificate of achievement at Generative AI Hackathon with IBM Granite, Feb 21-23, 2025",
+                      },
+                      {
+                        image: "/images/ai_hack.webp",
+                        title:
+                          "AI for Connectivity Hackathon Certificate, Jan 24-26, 2025",
+                      },
+                      {
+                        image: "/images/dev1.jpg",
+                        title:
+                          "Responsive Web Design Developer Certification, 2024",
+                      },
+                      {
+                        image: "/images/bookreading.jpg",
+                        title:
+                          "2nd Runner up, British Council Book Reading Competition, Fall 2019",
+                      },
+                      {
+                        image: "/images/vc.jpg",
+                        title:
+                          "Vice Chancellor Awards, Green University of Bangladesh",
+                      },
+                      {
+                        image: "/images/dean.jpg",
+                        title: "Dean Awards, Green University of Bangladesh",
+                      },
                     ].map((item, i) => (
                       <div key={i} className="text-center">
                         <img
@@ -486,7 +591,9 @@ export default function Home() {
                 )}
                 {activeTab === "publications" && (
                   <div
-                    className={`space-y-4 ${isDark ? "text-gray-300" : "text-gray-800"}`}
+                    className={`space-y-4 ${
+                      isDark ? "text-gray-300" : "text-gray-800"
+                    }`}
                   >
                     {[
                       {
@@ -497,7 +604,8 @@ export default function Home() {
                         link: "https://link.springer.com/article/10.1007/s00521-024-10814-x",
                       },
                       {
-                        title: "EcoSphereAI: Public Sector Networks Optimization",
+                        title:
+                          "EcoSphereAI: Public Sector Networks Optimization",
                         details: "Second Author, Work in progress",
                       },
                       {
@@ -508,7 +616,9 @@ export default function Home() {
                     ].map((pub, i) => (
                       <div key={i} className="border p-4 rounded">
                         <h3 className="font-bold">{pub.title}</h3>
-                        <p className="text-sm whitespace-pre-line">{pub.details}</p>
+                        <p className="text-sm whitespace-pre-line">
+                          {pub.details}
+                        </p>
                         {pub.link && (
                           <a
                             href={pub.link}
@@ -526,48 +636,86 @@ export default function Home() {
                 {activeTab === "languages" && (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {[
-                      { language: "English", skills: { Reading: 5, Writing: 5, Speaking: 4 } },
-                      { language: "Bangla", skills: { Reading: 5, Writing: 5, Speaking: 5 } },
-                      { language: "Hindi", skills: { Reading: 0, Writing: 0, Speaking: 5 } },
-                      { language: "Korean (Learning)", skills: { Reading: 1, Writing: 1, Speaking: 1 } },
+                      {
+                        language: "English",
+                        skills: { Reading: 5, Writing: 5, Speaking: 4 },
+                      },
+                      {
+                        language: "Bangla",
+                        skills: { Reading: 5, Writing: 5, Speaking: 5 },
+                      },
+                      {
+                        language: "Hindi",
+                        skills: { Reading: 0, Writing: 0, Speaking: 5 },
+                      },
+                      {
+                        language: "Korean (Learning)",
+                        skills: { Reading: 1, Writing: 1, Speaking: 1 },
+                      },
                     ].map((lang, i) => (
                       <div key={i} className="border p-4 rounded flex flex-col">
                         <h3 className="font-bold mb-2">{lang.language}</h3>
                         <div className="flex flex-col space-y-2">
-                          {Object.entries(lang.skills).map(([skillName, level], j) => (
-                            <div key={j} className="flex items-center space-x-2">
-                              <p className="text-sm font-semibold w-20">{skillName}</p>
-                              <div className="flex space-x-1">
-                                {Array.from({ length: 5 }).map((_, idx) => (
-                                  <div
-                                    key={idx}
-                                    className={`w-3 h-3 rounded ${
-                                      isDark
-                                        ? (idx < level ? "bg-blue-500" : "bg-gray-600")
-                                        : (idx < level ? "bg-green-500" : "bg-gray-300")
-                                    }`}
-                                    
-                                  ></div>
-                                ))}
+                          {Object.entries(lang.skills).map(
+                            ([skillName, level], j) => (
+                              <div
+                                key={j}
+                                className="flex items-center space-x-2"
+                              >
+                                <p className="text-sm font-semibold w-20">
+                                  {skillName}
+                                </p>
+                                <div className="flex space-x-1">
+                                  {Array.from({ length: 5 }).map((_, idx) => (
+                                    <div
+                                      key={idx}
+                                      className={`w-3 h-3 rounded ${
+                                        isDark
+                                          ? idx < level
+                                            ? "bg-blue-500"
+                                            : "bg-gray-600"
+                                          : idx < level
+                                          ? "bg-green-500"
+                                          : "bg-gray-300"
+                                      }`}
+                                    ></div>
+                                  ))}
+                                </div>
                               </div>
-                            </div>
-                          ))}
+                            )
+                          )}
                         </div>
                       </div>
                     ))}
                   </div>
                 )}
                 {activeTab === "software" && (
-                  <div className={`space-y-8 ${isDark ? "text-gray-300" : "text-black"}`}>
+                  <div
+                    className={`space-y-8 ${
+                      isDark ? "text-gray-300" : "text-black"
+                    }`}
+                  >
                     <div>
                       <h3 className="font-bold mb-2">Design Tools</h3>
                       <div className="flex space-x-6">
                         {[
                           { icon: "/assets/icons/figma.png", name: "Figma" },
-                          { icon: "/assets/icons/adobe-xd.png", name: "Adobe XD" },
-                          { icon: "/assets/icons/photoshop.png", name: "Photoshop" },
-                          { icon: "/assets/icons/autocad.png", name: "AutoCAD" },
-                          { icon: "/assets/icons/lucidchart.png", name: "Lucidchart" },
+                          {
+                            icon: "/assets/icons/adobe-xd.png",
+                            name: "Adobe XD",
+                          },
+                          {
+                            icon: "/assets/icons/photoshop.png",
+                            name: "Photoshop",
+                          },
+                          {
+                            icon: "/assets/icons/autocad.png",
+                            name: "AutoCAD",
+                          },
+                          {
+                            icon: "/assets/icons/lucidchart.png",
+                            name: "Lucidchart",
+                          },
                         ].map((tool, i) => (
                           <div key={i} className="text-center">
                             <img
@@ -586,8 +734,14 @@ export default function Home() {
                         {[
                           { icon: "/assets/icons/vscode.png", name: "VS Code" },
                           { icon: "/assets/icons/git.png", name: "Git" },
-                          { icon: "/assets/icons/wordpress.png", name: "WordPress" },
-                          { icon: "/assets/icons/android-studio.png", name: "Android Studio" },
+                          {
+                            icon: "/assets/icons/wordpress.png",
+                            name: "WordPress",
+                          },
+                          {
+                            icon: "/assets/icons/android-studio.png",
+                            name: "Android Studio",
+                          },
                           { icon: "/assets/icons/LaTeX.png", name: "LaTeX" },
                         ].map((tool, i) => (
                           <div key={i} className="text-center">
@@ -607,7 +761,10 @@ export default function Home() {
                         {[
                           { icon: "/assets/icons/word.png", name: "MS Word" },
                           { icon: "/assets/icons/excel.png", name: "MS Excel" },
-                          { icon: "/assets/icons/powerpoint.png", name: "MS PowerPoint" },
+                          {
+                            icon: "/assets/icons/powerpoint.png",
+                            name: "MS PowerPoint",
+                          },
                         ].map((tool, i) => (
                           <div key={i} className="text-center">
                             <img
@@ -668,10 +825,26 @@ export default function Home() {
               </a>
               <div className="flex space-x-4">
                 {[
-                  { href: "https://m.me/H.D.Mukit", icon: "/assets/icons/messenger.png", label: "Messenger" },
-                  { href: "https://wa.me/8801946187082", icon: "/assets/icons/whatsapp.png", label: "WhatsApp" },
-                  { href: "https://profile.imo.im/profileshare/shr.AAAAAAAAAAAAAAAAAAAAAI-ExEa0ZEM5ADo3yLliFXVWyKsPTvMCdHRpOPDktSlG", icon: "/assets/icons/imo.png", label: "IMO" },
-                  { href: "https://t.me/hasanulmukit", icon: "/assets/icons/telegram.png", label: "Telegram" },
+                  {
+                    href: "https://m.me/H.D.Mukit",
+                    icon: "/assets/icons/messenger.png",
+                    label: "Messenger",
+                  },
+                  {
+                    href: "https://wa.me/8801946187082",
+                    icon: "/assets/icons/whatsapp.png",
+                    label: "WhatsApp",
+                  },
+                  {
+                    href: "https://profile.imo.im/profileshare/shr.AAAAAAAAAAAAAAAAAAAAAI-ExEa0ZEM5ADo3yLliFXVWyKsPTvMCdHRpOPDktSlG",
+                    icon: "/assets/icons/imo.png",
+                    label: "IMO",
+                  },
+                  {
+                    href: "https://t.me/hasanulmukit",
+                    icon: "/assets/icons/telegram.png",
+                    label: "Telegram",
+                  },
                 ].map((contact, i) => (
                   <a
                     key={i}
@@ -734,9 +907,18 @@ export default function Home() {
           </div>
           <div className="flex space-x-4">
             {[
-              { href: "https://web.facebook.com/H.D.Mukit/", icon: "/assets/icons/facebook.png" },
-              { href: "https://www.instagram.com/h.d.mukit94/", icon: "/assets/icons/instagram.png" },
-              { href: "https://x.com/H_Mukit", icon: "/assets/icons/twitter.png" },
+              {
+                href: "https://web.facebook.com/H.D.Mukit/",
+                icon: "/assets/icons/facebook.png",
+              },
+              {
+                href: "https://www.instagram.com/h.d.mukit94/",
+                icon: "/assets/icons/instagram.png",
+              },
+              {
+                href: "https://x.com/H_Mukit",
+                icon: "/assets/icons/twitter.png",
+              },
             ].map((social, i) => (
               <a
                 key={i}
