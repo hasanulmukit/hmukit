@@ -306,9 +306,9 @@ export default function Home() {
                     "https://github.com/hasanulmukit/responsive-restaurant-webapp",
                 },
                 {
-                  image: "/images/prj3.png",
-                  live: "https://github.com/hasanulmukit/dev-manager-nextjs",
-                  github: "https://github.com/hasanulmukit/dev-manager-nextjs",
+                  image: "/images/prj3.jpg",
+                  live: "https://besthealth.hexreal.com",
+                  github: "https://github.com/hexreal",
                 },
                 {
                   image: "/images/prj5.png",
