@@ -159,7 +159,7 @@ export default function Home() {
                   alt: "Github",
                 },
                 {
-                  href: "https://leetcode.com/u/hmukit/",
+                  href: "https://leetcode.com/u/hmukit",
                   icon: "/assets/icons/leetcode.png",
                   alt: "Leetcode",
                 },
@@ -174,8 +174,8 @@ export default function Home() {
                   alt: "Scholar",
                 },
                 {
-                  href: "https://medium.com/@hmukit02",
-                  icon: "/assets/icons/medium.png",
+                  href: "https://dev.to/hasanulmukit",
+                  icon: "/assets/icons/dev.png",
                   alt: "Medium",
                 },
               ].map((social, i) => (
