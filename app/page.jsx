@@ -164,6 +164,11 @@ export default function Home() {
                   alt: "Leetcode",
                 },
                 {
+                  href: "https://dev.to/hasanulmukit",
+                  icon: "/assets/icons/dev.png",
+                  alt: "Dev",
+                },
+                {
                   href: "https://www.hackerrank.com/profile/hmukit_gub",
                   icon: "/assets/icons/hackerrank.png",
                   alt: "Hackerrank",
@@ -172,11 +177,6 @@ export default function Home() {
                   href: "https://scholar.google.com/citations?hl=en&user=AxgFFXIAAAAJ",
                   icon: "/assets/icons/scholar.png",
                   alt: "Scholar",
-                },
-                {
-                  href: "https://dev.to/hasanulmukit",
-                  icon: "/assets/icons/dev.png",
-                  alt: "Medium",
                 },
               ].map((social, i) => (
                 <a
@@ -479,12 +479,12 @@ export default function Home() {
                   >
                     {[
                       {
-                        title: "Web Developer",
-                        details: "Independent Contractor | May 2022 - Present",
-                      },
-                      {
                         title: "AI/ML Researcher & Developer",
                         details: "Independent Contractor | Oct 2022 - Present",
+                      },
+                      {
+                        title: "Web Developer",
+                        details: "Independent Contractor | May 2022 - Present",
                       },
                       {
                         title: "Content Writer",
@@ -606,7 +606,7 @@ export default function Home() {
                       {
                         title:
                           "EcoSphereAI: Public Sector Networks Optimization",
-                        details: "Second Author, Work in progress",
+                        details: "First Author, Work in progress",
                       },
                       {
                         title:
@@ -650,7 +650,7 @@ export default function Home() {
                       },
                       {
                         language: "Korean (Learning)",
-                        skills: { Reading: 1, Writing: 1, Speaking: 1 },
+                        skills: { Reading: 2, Writing: 3, Speaking: 1 },
                       },
                     ].map((lang, i) => (
                       <div key={i} className="border p-4 rounded flex flex-col">
