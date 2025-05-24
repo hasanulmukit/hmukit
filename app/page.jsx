@@ -6,7 +6,7 @@ import Head from "next/head";
 export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("aboutme");
-  const [isDark, setIsDark] = useState(true); // dark mode by default
+  const [isDark, setIsDark] = useState(false); // dark mode by default
 
   return (
     <>
